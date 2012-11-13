@@ -336,6 +336,18 @@ function runFiltrr() {
   </h2>
 </article>
 
+<article class='slide slide-list'>
+  <h1>How I like to roll...</h1>
+  <ul>
+  	<li class="slide">
+  		<h3>For the #1 important piece of the App, go Backbone.</h3>
+  	</li>
+  	<li class="slide">
+  		<h3>For all the rest of the CRUD, Formtastic</h3>
+  	</li>
+  </ul>
+</article>
+
 <article class='slide slide-subhead'>
   <h1>If it's dangerous to go alone, </h1>
   <h2 class='slide'>try this: <a href='https://github.com/RailsApps/rails-composer'>Rails Composer</a></h2>
@@ -399,6 +411,9 @@ rails generate mongoid:config
 # Kill the default index.html, layout application.html.erb
 rm public/index.html
 rm app/views/layouts/application.html.erb
+
+# Formtastic
+rails g formtastic:install
 
 # Twitter Bootstrap
 rails g bootstrap:install
@@ -500,6 +515,32 @@ belongs_to :user, index: true
 </pre></code>
 </article>
 
+
+<article class='slide slide-list'>
+  <h1>Formtastic</h1>
+  <p>Can generate a scaffold, will use inherited resources, but Formtastic generators don't play nice with Mongoid</p>
+<code><pre style='text-align:left;'>
+rails g scaffold List name:string category:string
+</pre></code>
+<p>Create your own form: (app/views/lists/_form.html.haml):</p>
+<code><pre style='text-align:left;'>
+= semantic_form_for @list do |f|
+  = f.inputs do
+    = f.input :name
+    = f.input :category
+  = f.actions
+</pre></code>
+<p><a href='https://github.com/mjbellantoni/formtastic-bootstrap'>Formtastic Bootstrap</a></p>
+<code><pre style='text-align:left'>
+# config/initializers/formtastic.rb
+Formtastic::Helpers::FormHelper.builder = FormtasticBootstrap::FormBuilder
+
+# app/assets/stylesheets/application.css
+*= require formtastic-bootstrap
+</pre></code>
+
+</article>
+
 <article class='slide slide-list'>
   <h1>Generate An Admin Console</h1>
   <p>Don't forget to turn off "Registerable" in your Admin model after you create your first user.</p>
@@ -514,9 +555,8 @@ rails g rails_admin:install
   <h1>And you're done! Except...</h1>
   <ul>
     <li class='slide'><h3>Themes <a href='http://bootswatch.com/#gallery'>Bootswatch</a> (Free) <a href='https://wrapbootstrap.com/'>Wrapbootstrap</a> (Paid)</h3></li>
-    <li class='slide'><h3>Your Content</h3></li>
     <li class='slide'><h3>Some Navigation</h3></li>
-    <li class='slide'><h3>Your App</h3></li>
+    <li class='slide'><h3>The thing that makes your app awesome...</h3></li>
   </ul>
 </pre></code>
 
@@ -524,7 +564,7 @@ rails g rails_admin:install
 
 
 <article class='slide slide-subhead'> 
-  <h1>Always Be Building<br/>Thanks!</h1>
+  <h1>Always Be Building.<br/>Thanks!</h1>
   <h2>Pascal Rettig | <a href='http://twitter.com/cykod'>@cykod</a></h2>
 </article>
 
