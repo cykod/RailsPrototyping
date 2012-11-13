@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Rails Prototyping</title>
+	<meta name="viewport" content="width=1024">
+
+  <link rel="stylesheet" href="dist/coderdeck-core.min.css" type="text/css">
+	<link rel="stylesheet" id='style-theme-link' href="dist/coderdeck.css" type="text/css" >
+  <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+
+	<script src='dist/jquery.min.js'></script>
+	<script src="dist/modernizr.js"></script>
+</head>
+<body class="deck-container">
+
+<script type='text/coderdeck' id='coderdeck-default'>
+  <html>
+    <head>
+      <script src='dist/jquery.min.js'>SCRIPTEND
+    </head>
+    <body>
+	    CODE
+    </body>
+</html>
+</script>
+
+
+<script type='text/coderdeck' id='coderdeck-style-example'>
+	<html>
+		<title>test</title>
+		<style>
+			CODE
+		</style>
+		<body>
+			<h1>I'm a H1 heading</h1>
+			<h2>I'm a H2 heading</h2>
+			<p>Pargraph of text &lt;p&gt; here</p>
+			<div class='stuff'>I'm a div &lt;div&gt; with class "stuff"</div>
+			<div id='my-div'>I'm a &lt;div&gt; with id "my-div"</div>
+		</body>
+	</html>
+</script> 	
+
+<article class='slide slide-subhead'>
+<h1>Rails Prototyping</h1>
+
+<h3>
+  Building cool stuff quickly<br/>
+  Pascal Rettig | <a href='http://twitter.com/cykod'>@cykod</a>
+</h3>
+</article>
+
+<article class='slide slide-subhead'>
+  <h1><span style='opacity:0.2'>Rails</span> Prototyping</h1>
+</article>
+
+<article class='slide slide-accent'>
+  <h1>
+What is prototyping?
+</h1>
+</article>
+
+<article class='slide slide-accent'>
+  <h1>A Prototype is a model to be replicated or learned from.</h1>
+  <h2 style='color:white; font-size:40px;'>(Paraphrased from Wikipedia)</h2>
+</article>
+
+<article class='slide slide-subhead'>
+  <h1>Prototype<br/>&ne;<br/>Final Product</h1>
+</article>
+
+<article class='slide slide-accent'>
+  <h1>
+    Why Prototype?
+  </h1>
+</article>
+
+<article class='slide slide-list'>
+  <h2>Why Prototype</h2>
+	<ol>
+    <li class='slide'><h3>Does anyone care?</h3></li>
+    <li class='slide'><h3>Does design, User Flow, Interaction work?</h3></li>
+    <li class='slide'><h3>What Architecture - Tools, DBs, Languages</h3></li>
+  </ol>
+</article>
+
+<article class='slide slide-accent'>
+  <h1>Also, you don't know<br/> what you don't know..</h1>
+</article>
+
+
+<article class='slide slide-subhead'>
+  <h1>The Faster you can<br/> learn the better</h1>
+</article>
+
+<article class='slide slide-subhead'>
+<h1>Sound Familiar?
+  <img src="images/build-measure-learn.png"></h1>
+</article>
+
+
+<article class="slide slide-image">
+  <h1  style='text-align:center;'>Artists do Studies<br/>
+    <img src='images/vangogh-study.jpg' width='600' style='padding-top:10px;' />
+</h1>
+</article>
+
+<article class="slide slide-image">
+  <h1 style='text-align:center;'>Artists do Studies<br/>
+    <img src='images/van-gogh-potato-eaters.jpg' width='600'  style='padding-top:10px; margin-bottom:20px;' />
+</h1>
+<h2 style='text-align:center;' > to evaluate composition, lighting, texture </h2>
+</article>
+
+<article class="slide slide-image">
+<h1 style='text-align:center;' >Yet developers...
+<img src='images/badui.jpg' width='700' style='padding-top:10px; margin-bottom:20px;' />
+</h1>
+<h2 style='text-transform:none; color:#333; text-align:center;' >
+  ... inflict unspeakable acts of UI on their users all the time.
+</h2>
+</article>
+
+<article class='slide slide-subhead'>
+    <h1>Prototyping is...</h1>
+    <h2 style='text-transform:none;'>..the pivotal activity that structures innovation and collaboration and creativity in design.</h2>
+    <h3>
+      - Scott Klemmer, Stanford
+    </h3>
+</article>
+
+
+
+<article class="slide slide-accent">
+<h1>Developer as artist</h1>
+<h3>
+  Prototypes = Artist studies for Developers
+</h3>
+</article>
+
+
+<article class="slide slide-image">
+<img src='images/art-and-fear.png' align='left' style='padding-right:20px;'/>
+<h1>Make more pots</h1>
+<h3 style='text-transform:none; color:#333;' >
+  <p>A pottery class was divided into two groups. Half the class was graded solely on the quantity of work, as weighed on a bathroom scale, and half solely on the quality of their best piece.</p>
+  <p class='slide'>Result: the works of highest quality were all produced by the group being graded for quantity.
+  <br/>- <a href='http://www.amazon.com/dp/0961454733/?tag=codihorr-20'>Art and Fear (via <a href='http://www.codinghorror.com/blog/2008/08/quantity-always-trumps-quality.html'>Coding Horror</a>)</a></p>
+</h3>
+</article>
+
+
+<article class='slide slide-subhead'>
+  <h1>Avoid Best-Practicitis</h1>
+  <h2 class='slide' style='color:#666;'>Aka over-analysis-paralysis</h2>
+</article>
+
+<article class='slide slide-accent'>
+<h1>How to attack a prototype?</h1>
+</article>
+
+
+<article class='slide slide-subhead'>
+  <h1>#1: Build Only what's needed</h1>
+  <h2><img src='images/palmpilot.jpg'/></h2>
+</article>
+
+<article class="slide slide-subhead">
+ <h1>#2: Dispose with Ceremony</h1>
+ <h3>Pick the <em>Best Tools*</em> for the job and get it done as quickly as possible.</h3>
+ <h3 class='slide'>
+   (No authentication, data model, styling as necessary)
+ </h3>
+</article>
+
+<article class='slide slide-subhead'>
+  <h1>#3: Iterate, Iterate, Iterate</h1>
+  <h3>Get <em>*something*</em> up ASAP</h3>
+</article>
+
+<article class='slide slide-subhead'>
+  <h1>#4: Be ready to throw it all away</h1>
+  <h3>One prototype might not be able to test everything</h3>
+</article>
+
+<article class='slide slide-subhead'>
+  <h1>#5: Decide beforehand what's production code</h1>
+  <h3>Make sure you apply the normal rigor to those parts</h3>
+</article>
+
+<article class='slide slide-subhead'>
+  <h1>Rails Prototyping</h1>
+</article>
+
+
+<article class='slide slide-subhead'>
+  <h1>Rails <span style='opacity:0.2'>Prototyping</span></h1>
+</article>
+
+<article class='slide slide-subhead'>
+  <h1>The first rule of Rails prototyping...</h1>
+  <h2 class='slide'>Is make sure you need Rails</h2>
+</article>
+
+<article class='slide slide-accent'>
+  <h1>Rails is Kinda heavy</h1>
+  <h2 class='slide' style='color:white;'>And you'll be tempted to<br/>keep your prototype</h2>
+</article>
+
+<article class='slide slide-list'>
+  <h1>Alternatives to Rails</h1>
+  <ul>
+    <li><h3>Fake the data with static JSON - Go front end only (JS MVC)</h3></li>
+    <li class='slide'><h3>Use localstorage</h3></li>
+    <li class='slide'><h3>Use a cloud-based NoSQL DB in the sky like Parse or Kinvey</h3></li>
+    <li class='slide'><h3>Set up your own CORS-enabled end-point</h3></li>
+  </ul>
+</article>
+
+<article class='slide slide-list'>
+  <h1>Fake it w/ HTML5</h1>
+  <p>Instagram-killer prototype</p>
+  <textarea class='coder-editor coder-editor-instant'>
+<script src='dist/filtrr2.js'></script>
+<script>
+$(function() {
+    $(".dropper").on("dragenter dragover",function(e) { $(this).addClass("highlight"); e.preventDefault(); e.stopPropagation(); });
+    $(".dropper").on("drop",function(e) {
+      e.preventDefault(); e.stopPropagation(); 
+      e = e.originalEvent;
+      var img = $("<img class='polaroid' />").appendTo(".container");
+      var reader = new FileReader();
+      reader.onload = function(e) { img[0].src = e.target.result; runFiltrr(); $(".container").addClass("active"); }
+      reader.readAsDataURL(e.dataTransfer.files[0]);
+      $(".dropper").hide();
+    });
+});
+
+function runFiltrr() {
+    Filtrr2(".polaroid", function() {
+       var dup = this.dup().expose(-35);                       
+       this.contrast(40)
+           .saturate(-70)
+           .adjust(0.2, 0.2, 0)
+           .layer("softLight", dup).render();
+    });
+}
+</script>
+<style>
+  .dropper { width: 250px;  text-align:center; padding: 40px 0px; background-color:gray; color:white; } 
+  .highlight { background-color:black; }
+  .container { 
+    text-align:center; padding-top:50px;
+    -webkit-transition: -webkit-transform 0.8s;
+    -webkit-transform:rotate(0deg);
+  }
+  .active {
+    -webkit-transform:rotate(15deg);
+  }
+  .polaroid {
+    border:1px solid #DDD;
+    padding:5px 5px 50px 5px;
+    box-shadow:5px 5px 10px #CCC;
+  }
+</style>
+<div class='container'><div class='dropper'>Drop a File on me yo!</div>
+</div>
+</textarea>
+</article>
+
+
+<article class='slide slide-accent'>
+  <h1>You may still need Rails...</h1>
+</article>
+
+<article class='slide slide-subhead'>
+  <h1>The One True Way<span style='position:relative; top:-0.5em;'>&reg;</span><br/>to Prototype Rails is...</h1>
+</article>
+
+<article class='slide slide-subhead'>
+  <h1>Whatever works for you</h1>
+  <h3 class='slide'>DB, JS Framework, Gems, etc</h3>
+</article>
+
+<article class='slide slide-list'>
+  <h1>My List - Backend:</h1>
+  <ul>
+    <li class='slide'>
+    <h3>Database - MongoDB + Mongoid</h2>
+    <p>Widely available, easy to deploy, no migrations (1.9.3+)</p>
+    </li>
+  	<li class='slide'>
+    <h3>Authentication - Leave out or Devise (w/ OmniAuth if necessary)</h3>
+    <p>Batteries included</p>
+  	</li>
+  	<li class='slide'>
+    <h3>Controllers - inherited_resources, has_scope, kaminari</h3>
+    <p>Minimize typing</p>
+  	</li>
+  	<li class='slide'>
+    <h3>Admin - rails_admin (if necessary)</h3>
+    <p>Works with Mongoid. Easy to set up.</p>
+  	</li>
+  </ul>
+</article>
+
+
+<article class='slide slide-list'>
+  <h1>My List - Front end:</h1>
+  <ul>
+    <li class='slide'>
+    <h3>Views &amp; Stylesheets - HAML + SASS</h2>
+    <p>Less typing. Well supported in generators.</p>
+    </li>
+  	<li class='slide'>
+    <h3>Design and Styling - Twitter Bootstrap</h3>
+    <p>twitter-bootstrap-rails provides generators and easy integration</p>
+  	</li>
+  	<li class='slide'>
+    <h3>Forms - Formtastic + formtastic-bootstrap</h3>
+    <p>Nice forms out of the box</p>
+  	</li>
+  	<li class='slide'>
+    <h3>Javascript - Backbone w/ rails-backbone</h3>
+    <p>No need to download or install anything</p>
+  	</li>
+  </ul>
+</article>
+
+
+<article class='slide slide-subhead'>
+  <h1>Where's your testing<br/>framework Jackass?</h1>
+  <h2 class='slide' style='color:#666;' >
+    RSpec w/ only model tests,<br/>or leave it out for the prototype.
+  </h2>
+</article>
+
+<article class='slide slide-subhead'>
+  <h1>If it's dangerous to go alone, </h1>
+  <h2 class='slide'>try this: <a href='https://github.com/RailsApps/rails-composer'>Rails Composer</a></h2>
+</article>
+
+<article class='slide slide-list'>
+  <h1>Gemfile</h1>
+  <code><pre style='text-align:left;'>
+# In Assets
+gem "therubyracer"
+gem "less-rails"
+gem "twitter-bootstrap-rails"
+...
+
+
+gem 'jquery-rails'
+gem 'mongoid'
+
+gem 'haml'
+gem 'haml-rails'
+gem 'therubyracer'
+gem 'formtastic'
+gem "formtastic-bootstrap"
+gem 'rails-backbone'
+
+gem 'devise'
+
+gem 'inherited_resources'
+gem 'has_scope'
+gem 'kaminari'
+
+gem 'rails_admin'
+  </pre></code>
+
+</article>
+
+<article class='slide slide-list'>
+  <h1>New</h1>
+<code><pre style='text-align:left;'>
+rails new proto -T -O --skip-bundle
+</pre></code>
+</article>
+
+<article class='slide slide-list'>
+  <h1>Config</h1>
+  <code><pre style='text-align:left;'>
+# in config/application.rb
+config.generators do |g|
+  g.form_builder :formtastic
+  g.template_engine :haml
+end
+</pre></code>
+</article>
+
+<article class='slide slide-list'>
+  <h1>Generate up all the things</h1>
+<code><pre style='text-align:left;'>
+# Mongoid 
+rails generate mongoid:config
+
+# Kill the default index.html, layout application.html.erb
+rm public/index.html
+rm app/views/layouts/application.html.erb
+
+# Twitter Bootstrap
+rails g bootstrap:install
+rails g bootstrap:layout application fluid
+
+# Generate a Home page 
+# (need to change routes.rb to: root to: "page#home")
+rails g controller Page home
+
+# Devise w/ Mongoid
+rails generate devise:install
+rails generate devise User
+rails generate devise Admin
+
+# Create a Resource (we'll do contacts)
+rails g resource contacts name:string email:string phone:string
+
+# Bootstrap Rails Backbone
+rails g backbone:install
+
+# Create a front-end scaffold
+rails g backbone:scaffold Contact name:string email:string phone:string
+</code></pre>
+</article>
+
+<article class='slide slide-list'>
+  <h1>Make Mongoid play nice with Backbone</h1>
+  <p><a href='http://blog.joshdzielak.com/blog/2011/12/24/tame-the-mongoid-id-field-in-your-rails-and-backbone-js-app/'>config/initializers/mongo.rb</a></p>
+<pre><code style='text-align:left;'>
+module Mongoid
+  module Document
+    def as_json(options={})
+      attrs = super(options)
+      attrs["id"] = self.persisted? ? self._id : nil
+      attrs
+    end
+  end
+end
+</code></pre>
+</article>
+
+
+<article class='slide slide-list'>
+<h1>Wire up our models and controller</h1>
+<p>app/controllers/contact_controller.rb</p>
+<pre><code>
+class ContactsController < ApplicationController
+  inherit_resources 
+  before_filter :authenticate_user!
+
+  respond_to :html, only: [ :index]
+  respond_to :json
+
+  protected
+
+    def begin_of_association_chain
+      current_user
+    end
+end
+</code></pre>
+<p>app/models/user.rb</p>
+<pre><code>
+# Add to bottom
+has_many :contacts
+</code></pre>
+
+<p>app/models/user.rb</p>
+<pre><code>
+# Add to bottom
+belongs_to :user, index: true
+</code></pre>
+</article>
+
+<article class='slide slide-list'>
+  <h1>Get us a spot for in-page JavaScript</h1>
+  <p>app/views/layouts/application.html.haml</p>
+<pre><code>
+    ...
+    /
+      Javascripts
+      \==================================================
+    / Placed at the end of the document so the pages load faster
+    = javascript_include_tag "application"
+    = yield :end_body
+</code></pre>  
+</article>
+
+<article class='slide slide-list'>
+<h1>Create a Contacts index template</h1>
+<p>in app/views/contacts/index.html.haml
+<code><pre style='text-align:left'>
+#contacts
+
+- content_for :end_body do
+  :javascript
+    $(function() {
+      window.router = new Proto.Routers.ContactsRouter({contacts: #{@contacts.to_json.html_safe}});
+      Backbone.history.start();
+    });
+</pre></code>
+</article>
+
+
+<article class='slide slide-subhead'> 
+  <h1>Always Be Building<br/>Thanks!</h1>
+  <h2>Pascal Rettig | <a href='http://twitter.com/cykod'>@cykod</a></h2>
+</article>
+
+<script src='dist/coderdeck.min.js'></script>
+
+<script>
+	$(function() {
+		$.deck('.slide');
+	});
+</script>
+</body>
+</html>
